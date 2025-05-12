@@ -1,541 +1,919 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MIX BEAT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href=https://i.postimg.cc/fLVDZRt5/2025-04-02-01-58-38-92b5a518.jpg>
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #000000;
-      color: #ffffff;
-    }
-    .header {
-      background-color: #000000;
-      color: rgb(255, 0, 0);
-      padding: 10px 0;
-      text-align: center;
-    }
-    .hero {
-      background: url(https://i.postimg.cc/xCBYdVLQ/2025-04-02-01-52-12-9fcab73e.jpg) no-repeat center center/cover;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 20px;
-      position: relative;
-    }
-    .hero img {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 40px;
-      height: 40px;
-    }
-    .latest-releases {
-      border-radius: 20px;
-      background: rgb(0, 0, 0);
-      padding: 20px;
-      color: white;
-      margin-top: 20px;
-    }
-    .release-container {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      white-space: nowrap;
-      max-width: 100%;
-    }
-    .release {
-      text-align: left;
-      border: 1px solid #8cc9b7;
-      padding: 10px;
-      width: 300px;
-      display: inline-block;
-      text-decoration: none;
-      color: rgb(0, 0, 0);
-      background: #ffffff;
-      border-radius: 15px;
-      margin-right: 10px;
-    }
-    .release img {
-      width: 300px;
-      height: 300px;
-      border-radius: 15px;
-    }
-    .arrows {
-      position: absolute;
-      right: 0;
-      display: flex;
-      gap: 10px;
-      cursor: pointer;
-    }
-    .footer {
-      background-color:#000000;
-      color:#cbd5e0;
-      padding: 40px;
-      font-family: Arial, sans-serif;
-      direction: rtl;
-      text-align: right;
-    }
-    .footer img {
-      display: block;
-      margin: 20px auto;
-      max-width: 100%;
-    }
-  </style>
-</head>
-<body>
-  <header class="header">
-    <h1></h1>
-  </header>
-
-  <section class="hero">
-    <img src=https://i.postimg.cc/fLVDZRt5/2025-04-02-01-58-38-92b5a518.jpg alt="Custom Image">
-  </section>
-
-  <section class="latest-releases">
-    <div class="header" style="display: flex; justify-content: space-between; align-items: center; position: relative;">
-      <h2 style="text-align: left;">2025</h2>
-      <h2 style="text-align: center; flex-grow: 1;">Latest Releases</h2>
-      <div class="arrows">
-        <span class="arrow-left" onclick="scrollLeft()">◁</span>
-        <span class="arrow-right" onclick="scrollRight()">▷</span>
-      </div>
-    </div> 
-    <div class="release-container">
-      <a href=https://open.spotify.com/intl-ar/album/1VExiSRKhgULuDQssesx2Y?si=h_cB7_Z9SUG6j-t6ZOGYPQ target="_blank" class="release">
-          <img src=https://i.postimg.cc/wxJNXtfK/2025-02-16-13-20-14-7ace59bf.jpg alt="GERBERTO">
-          <div class="track-info">
-            <h4> GERBERTO</h4>
-            <p>stella solitaria</p>
-          </div>
-      <a href=https://open.spotify.com/intl-ar/album/1VExiSRKhgULuDQssesx2Y?si=h_cB7_Z9SUG6j-t6ZOGYPQ target="_blank" class="release">
-        <img src=https://i.postimg.cc/wxJNXtfK/2025-02-16-13-20-14-7ace59bf.jpg alt="GERBERTO">
-        <div class="track-info">
-          <h4> GERBERTO</h4>
-          <p>stella solitaria</p>
-        </div>
-      </a>
-    </div>
-  </section>
-    </div>
-  </section>
-  <script>
-    function scrollLeft() {
-      document.querySelectorAll('.release-container').forEach(container => {
-        container.scrollBy({ left: -300, behavior: 'smooth' });
-      });
-    }
-
-    function scrollRight() {
-      document.querySelectorAll('.release-container').forEach(container => {
-        container.scrollBy({ left: 300, behavior: 'smooth' });
-      });
-    }
-  </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ARTIST MIX</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="https://i.postimg.cc/fLVDZRt5/2025-04-02-01-58-38-92b5a518.jpg">
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      color: #ff0000;
-    }
-
-    .top-header {
-      background-color: #000;
-      color: rgb(255, 0, 0);
-      padding: 30px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .top-header img {
-      position: absolute;
-      left: 20px;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .top-header h1 {
-      font-size: 48px;
-      letter-spacing: 4px;
-      font-weight: bold;
-    }
-
-    .artist-section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 40px 20px;
-      background-color: #000000;
-      flex-wrap: wrap;
-    }
-
-    .artist-info {
-      flex: 1;
-      min-width: 250px;
-    }
-
-    .artist-info h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    .artist-info a {
-      display: block;
-      margin: 10px 0;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-
-    .artist-info a:hover {
-      color: #ff0000;
-    }
-
-    .artist-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      min-width: 250px;
-    }
-
-    .artist-image img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    }
-
-    @media (max-width: 768px) {
-      .artist-section {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-
-      .artist-info a {
-        display: inline-block;
-        margin: 10px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>ARTIST MIX</title>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/fLVDZRt5/2025-04-02-01-58-38-92b5a518.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mix Beat | هندسة الصوت وتوزيع الموسيقى</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-      body {
-        font-family: 'Audiowide', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-        color: #ff0000;
-      }
-  
-      @keyframes fadeUp {
-        0% {
-          opacity: 0;
-          transform: translateY(50px);
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+        
+        :root {
+            --primary-color: #AB0012;
+            --dark-color: #1C1919;
+            --light-color: #f8f9fa;
         }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
         }
-      }
-  
-      .top-header {
-        background-color: #000;
-        color: rgb(255, 0, 0);
-        padding: 30px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-      }
-  
-      .top-header img {
-        position: absolute;
-        left: 20px;
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-  
-      .top-header h1 {
-        font-family: 'Audiowide', sans-serif;
-        font-size: 48px;
-        letter-spacing: 4px;
-        font-weight: bold;
-      }
-  
-      .artist-section {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 40px 20px;
-        background-color: #000000;
-        flex-wrap: wrap;
-      }
-  
-      .artist-info {
-        flex: 1;
-        min-width: 250px;
-      }
-  
-      .artist-info h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-      }
-  
-      .artist-info a {
-        display: block;
-        margin: 10px 0;
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-      }
-  
-      .artist-info a:hover {
-        color: #ff0000;
-      }
-  
-      .artist-image {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        min-width: 250px;
-      }
-  
-      .artist-image img {
-        width: 100%;
-        max-width: 300px;
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        animation: fadeUp 1.2s ease-out;
-      }
-  
-      @media (max-width: 768px) {
-        .artist-section {
-          flex-direction: column-reverse;
-          text-align: center;
-        }
-  
-        .artist-info a {
-          display: inline-block;
-          margin: 10px;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>ARTIST MIX</title>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-      <link rel="icon" type="image/png" href="https://i.postimg.cc/fLVDZRt5/2025-04-02-01-58-38-92b5a518.jpg">
-      <style>
+        
         body {
-          font-family: 'Inter', sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #000;
-          color: #ff0000;
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            overflow-x: hidden;
         }
-    
-        @keyframes fadeUp {
-          0% {
+        
+        /* أنيميشن الخلفية 4K */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%);
+            overflow: hidden;
+        }
+        
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(171,0,18,0.1) 0%, rgba(28,25,25,0) 70%);
+            animation: pulse 15s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        /* الشريط العلوي */
+        header {
+            background-color: rgba(28, 25, 25, 0.9);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo img {
+            height: 50px;
+            filter: drop-shadow(0 0 10px var(--primary-color));
+            animation: logoGlow 3s infinite alternate;
+        }
+        
+        @keyframes logoGlow {
+            0% { filter: drop-shadow(0 0 5px var(--primary-color)); }
+            100% { filter: drop-shadow(0 0 15px var(--primary-color)); }
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(to right, var(--primary-color), #ff4d4d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        
+        /* القسم الرئيسي */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 10;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards 0.5s;
+        }
+        
+        @keyframes fadeInUp {
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--light-color), #cccccc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(171, 0, 18, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #cccccc;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(171, 0, 18, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(171, 0, 18, 0.6);
+        }
+        
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .cta-button:hover::after {
+            transform: translateX(100%);
+        }
+        
+        /* قسم التراكات */
+        .tracks-section {
+            padding: 5rem 2rem;
+            background-color: rgba(15, 15, 15, 0.7);
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+        }
+        
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .track-card {
+            background-color: rgba(40, 40, 40, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+        .track-card:nth-child(1) { animation-delay: 0.2s; }
+        .track-card:nth-child(2) { animation-delay: 0.4s; }
+        .track-card:nth-child(3) { animation-delay: 0.6s; }
+        .track-card:nth-child(4) { animation-delay: 0.8s; }
+        
+        .track-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(171, 0, 18, 0.3);
+        }
+        
+        .track-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .track-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .track-card:hover .track-image img {
+            transform: scale(1.1);
+        }
+        
+        .track-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        }
+        
+        .track-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .track-artist {
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+        
+        .track-info {
+            padding: 1.5rem;
+        }
+        
+        .track-description {
+            color: #cccccc;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .listen-button {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .listen-button:hover {
+            background-color: #c90015;
+        }
+        
+        /* قسم الفنانين */
+        .artists-section {
+            padding: 5rem 2rem;
+            position: relative;
+        }
+        
+        .artists-slider {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .artist-card {
+            background-color: rgba(40, 40, 40, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 2rem;
+            margin: 0 1rem;
+            opacity: 0;
+            transform: scale(0.9);
+            animation: fadeInScale 0.8s forwards;
+        }
+        
+        @keyframes fadeInScale {
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .artist-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(171, 0, 18, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .artist-card:hover .artist-image {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(171, 0, 18, 0.8);
+        }
+        
+        .artist-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .artist-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .artist-role {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+        
+        .artist-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .artist-social a {
+            color: #cccccc;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .artist-social a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* قسم من نحن */
+        .about-section {
+            padding: 5rem 2rem;
+            background-color: rgba(15, 15, 15, 0.7);
+            position: relative;
+        }
+        
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateX(-50px);
+            animation: fadeInRight 1s forwards 0.3s;
+        }
+        
+        @keyframes fadeInRight {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(50px);
+            animation: fadeInLeft 1s forwards 0.6s;
+        }
+        
+        @keyframes fadeInLeft {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #cccccc;
+        }
+        
+        .timeline {
+            margin-top: 2rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-color), transparent);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.2rem;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-text {
+            color: #aaaaaa;
+        }
+        
+        /* التذييل */
+        footer {
+            background-color: rgba(10, 10, 10, 0.95);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-social a {
+            color: #cccccc;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: #aaaaaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .copyright {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* تأثيرات إضافية */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        /* تأثيرات التمرير */
+        .scroll-reveal {
             opacity: 0;
             transform: translateY(50px);
-          }
-          100% {
+            transition: all 1s ease;
+        }
+        
+        .scroll-reveal.active {
             opacity: 1;
             transform: translateY(0);
-          }
         }
-    
-        .top-header {
-          background-color: #000;
-          color: rgb(255, 0, 0);
-          padding: 30px 20px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-        }
-    
-        .top-header img {
-          position: absolute;
-          left: 20px;
-          width: 70px;
-          height: 70px;
-          border-radius: 50%;
-          object-fit: cover;
-        }
-    
-        .top-header h1 {
-          font-size: 42px;
-          font-weight: 800;
-          letter-spacing: 1px;
-        }
-    
-        .artist-section {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 40px 20px;
-          background-color: #000000;
-          flex-wrap: wrap;
-        }
-    
-        .artist-info {
-          flex: 1;
-          min-width: 250px;
-        }
-    
-        .artist-info h2 {
-          font-size: 26px;
-          font-weight: 600;
-          margin-bottom: 20px;
-          color: #fff;
-        }
-    
-        .artist-info a {
-          display: block;
-          margin: 10px 0;
-          color: #ffffff;
-          text-decoration: none;
-          font-weight: 500;
-          transition: color 0.3s ease;
-        }
-    
-        .artist-info a:hover {
-          color: #ffc400;
-        }
-    
-        .artist-image {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          min-width: 250px;
-        }
-    
-        .artist-image img {
-          width: 100%;
-          max-width: 300px;
-          border-radius: 15px;
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-          animation: fadeUp 1.2s ease-out;
-        }
-    
+        
+        /* التجاوب */
         @media (max-width: 768px) {
-          .artist-section {
-            flex-direction: column-reverse;
-            text-align: center;
-          }
-    
-          .artist-info a {
-            display: inline-block;
-            margin: 10px;
-          }
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text {
+                flex: none;
+                width: 100%;
+            }
+            
+            .about-text {
+                margin-top: 2rem;
+            }
         }
-      </style>
-    </head>
-    <body>
-      <header class="top-header">
-        <img src="https://i.postimg.cc/XqSgLrz4/1.png" alt="GERBERTO">
-        <h1>ARTIST MIX</h1>
-      </header>
-    
-      <section class="artist-section">
-        <div class="artist-info">
-          <h2>GERBERTO</h2> 
-          <a href="https://www.instagram.com/gerberto_7?igsh=Z2R4dHU5eDBkYzI=" target="_blank">Instagram</a>
-          <a href="https://www.youtube.com/@GERBERTO_7" target="_blank">YouTube</a>
-          <a href="https://open.spotify.com/artist/4X74SYCVlJGWvb8OwNE64v?si=C9tUh_ZqR---tpxGRagouA" target="_blank">Spotify</a>
-          <a href="https://open.anghami.com/QUkxy5ECySb" target="_blank">Anghami</a>
-          <a href="https://music.apple.com/eg/artist/gerberto/1747438061" target="_blank">Apple Music</a>
-        </div>
-    
-        <div class="artist-image">
-          <img src=https://i.postimg.cc/cCDQ66Kv/2025-04-14-15-46-48-1d82d1da.jpg" alt="GERBERTO"> 
-        </div>
-      </section>
-    </body>
-    </html>
-    <section class="artist-section">
-      <div class="artist-info">
-        <h2>SHADY</h2> 
-        <a href=https://www.instagram.com/realshady404?igsh=MWpndXloYXM4OGEzdQ== target="_blank">Instagram</a>
-        <a href=https://youtu.be/sGN3UQWTXxo?si=T4PR3N3IRAeLAXSO target="_blank">YouTube</a>
-        <a href=https://open.spotify.com/artist/3E7K4wmslqMHBF2KrCN1oG?si=b8ey7ZuoQgeIvHXsMZPabg target="_blank">Spotify</a>
-        <a href=https://www.tiktok.com/@realshady0?_t=ZS-8vWfHRsCoGA&_r=1 target="_blank">Tik Tok</a>
-        </a>
-      </div>
-  
-      <div class="artist-image">
-        <img src=https://i.postimg.cc/1zCPCQNp/2025-04-14-15-46-47-797d1131.jpg" alt="GERBERTO"> 
-      </div>
-    </section>
-  </body>
-  </html>
-  <section class="artist-section">
-    <div class="artist-info">
-      <h2>EUO</h2> 
-      <a href=https://www.instagram.com/xx_euo_sam_xx?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw== target="_blank">Instagram</a>
-      <a href=https://www.youtube.com/@euo_ak47?si=6wtCfWfi3S4iGPyp&fbclid=PAZXh0bgNhZW0CMTEAAafB4WOedlOI5Y3q2VprH4PwABWbPqlVVlQ6mLxecfU-c04PgQl7o3M8sq5Fgg_aem_01cHXO825P8v3o8t9DHT3A target="_blank">YouTube</a>
-      <a href=https://www.tiktok.com/@euo.sam?_t=ZS-8sjZ5kCRWmA&_r=1&fbclid=PAZXh0bgNhZW0CMTEAAafIWz06_Ux7YXqtLZ1qaLnEqZ322-7-ZvWDeK3eV6VjetpRHl1O6FGe1vxjIg_aem_4HgbwyVic16GfGQFtUQeDQ target="_blank">Tik Tok</a>
-    </div>
 
-    <div class="artist-image">
-      <img src=https://i.postimg.cc/yY1KHxXF/2025-04-14-15-46-48-649844a5.jpg alt="GERBERTO"> 
-    </div>
-  </section>
+        /* أسلوب جديد للرسالة 4K */
+        .no-social-message {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--primary-color);
+        }
+        
+        .no-social-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(171, 0, 18, 0.1), transparent);
+            z-index: -1;
+        }
+        
+        .no-social-message p {
+            margin: 0;
+            color: #ff4d4d;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- أنيميشن الخلفية -->
+    <div class="bg-animation"></div>
+    
+    <!-- جسيمات متحركة -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- الرأس -->
+    <header>
+        <div class="logo">
+            <img src="https://i.postimg.cc/fb1LkN97/1.png" alt="Mix Beat Logo">
+            <h1>MIX BEAT</h1>
+        </div>
+    </header>
+    
+    <!-- القسم الرئيسي -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>هندسة الصوت باحترافية غير مسبوقة</h2>
+            <p>شركة Mix Beat تقدم أفضل خدمات الهندسة الصوتية، توزيع الموسيقى، وبيع الإيقاعات الموسيقية بأعلى جودة. نحن نخلق الفن ونصنع التميز.</p>
+            <a href="#tracks" class="cta-button">استمع إلى أعمالنا</a>
+        </div>
+    </section>
+    
+    <!-- قسم التراكات -->
+    <section class="tracks-section" id="tracks">
+        <h2 class="section-title">أحدث التراكات</h2>
+        
+        <div class="tracks-grid">
+            <!-- تراك 1 - تم التعديل هنا -->
+            <div class="track-card scroll-reveal">
+                <div class="track-image">
+                    <img src="https://i.postimg.cc/6Qzn3GD5/2025-05-12-05-20-59-3fe5b6a4.jpg" alt="Track Cover">
+                    <div class="track-overlay">
+                        <h3 class="track-title">اسم التراك</h3>
+                        <p class="track-artist">GERBERTO (FT CARTER)</p>
+                    </div>
+                </div>
+                <div class="track-info">
+                    <p class="track-description">أغنية جديدة من GERBERTO بالتعاون مع CARTER، إنتاج وتوزيع شركة MIX BEAT.</p>
+                    <a href="https://youtu.be/CZHJp5FQH6s?si=gnzUVlZnZYFv2M6J" class="listen-button" target="_blank">
+                        استمع الآن <i class="fas fa-headphones"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- تراك 2 - تم التعديل هنا -->
+            <div class="track-card scroll-reveal">
+                <div class="track-image">
+                    <img src="https://i.postimg.cc/xjxS6Vdq/2025-05-07-11-50-36-c014c58b.jpg" alt="FVRESVM Cover">
+                    <div class="track-overlay">
+                        <h3 class="track-title">FVRESVM</h3>
+                        <p class="track-artist">GERBERTO</p>
+                    </div>
+                </div>
+                <div class="track-info">
+                    <p class="track-description">GERBERTO معاون مع MIX BEAT في هذا العمل المميز الذي يجمع بين الأصالة والحداثة في عالم الموسيقى.</p>
+                    <a href="https://youtu.be/ftaIauVfesE?si=GGej5LbfoLfaA2Kt" class="listen-button" target="_blank">
+                        استمع الآن <i class="fas fa-headphones"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- تراك 3 - تم التعديل هنا -->
+            <div class="track-card scroll-reveal">
+                <div class="track-image">
+                    <img src="https://i.postimg.cc/PJWJdk1Z/2025-05-04-13-52-03-b08ceffe.jpg" alt="LILA EL DO5LA Cover">
+                    <div class="track-overlay">
+                        <h3 class="track-title">LILA EL DO5LA</h3>
+                        <p class="track-artist">EUO (FT ZIVD Riddler)</p>
+                    </div>
+                </div>
+                <div class="track-info">
+                    <p class="track-description">أغنية EUO (FT ZIVD Riddler) من إنتاج وتوزيع شركة MIX BEAT تحت إشراف GERBERTO، تعاون فني مميز يجمع بين المواهب الصاعدة في عالم الموسيقى.</p>
+                    <a href="https://youtu.be/GME3ZXOd6YY?si=wv6cT20oA_EqJjQ0" class="listen-button" target="_blank">
+                        استمع الآن <i class="fas fa-headphones"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- تراك 4 -->
+            <div class="track-card scroll-reveal">
+                <div class="track-image">
+                    <img src="https://i.postimg.cc/wxJNXtfK/2025-02-16-13-20-14-7ace59bf.jpg" alt="Track Cover">
+                    <div class="track-overlay">
+                        <h3 class="track-title">اسم التراك</h3>
+                        <p class="track-artist">الفنان</p>
+                    </div>
+                </div>
+                <div class="track-info">
+                    <p class="track-description">وصف قصير للتراك هنا. يمكن أن يتضمن تفاصيل عن الأسلوب الموسيقي أو كلمات الأغنية.</p>
+                    <a href="#" class="listen-button">
+                        استمع الآن <i class="fas fa-headphones"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الفنانين -->
+    <section class="artists-section">
+        <h2 class="section-title">فنانونا</h2>
+        
+        <div class="artists-slider">
+            <!-- فنان 1 - تم التعديل هنا -->
+            <div class="artist-card scroll-reveal">
+                <div class="artist-image">
+                    <img src="https://i.postimg.cc/6p4pN5P8/2025-05-07-11-25-27-afc1983e.jpg" alt="GERBERTO">
+                </div>
+                <h3 class="artist-name">GERBERTO</h3>
+                <p class="artist-role">مؤسس الشركة</p>
+                <p>فنان ومهندس صوتي محترف، مؤسس شركة Mix Beat ورائد في مجال الهندسة الصوتية.</p>
+                <div class="artist-social">
+                    <a href="https://www.instagram.com/gerberto_7?igsh=a2V0OTZ5aWJiY3Z0" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://open.spotify.com/intl-ar/artist/4X74SYCVlJGWvb8OwNE64v?si=6-t9hsRxTwmSBmG-xG-gbA" target="_blank"><i class="fab fa-spotify"></i></a>
+                    <a href="http://www.youtube.com/@GERBERTO_7" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://soundcloud.com/gerberto-o?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank"><i class="fab fa-soundcloud"></i></a>
+                </div>
+            </div>
+            
+            <!-- فنان 2 - تم التعديل هنا -->
+            <div class="artist-card scroll-reveal">
+                <div class="artist-image">
+                    <img src="https://i.postimg.cc/T1zV4GfD/2025-05-07-05-56-44-d04728c6.jpg" alt="EUO">
+                </div>
+                <h3 class="artist-name">EUO</h3>
+                <p class="artist-role">فنان</p>
+                <p>فنان موهوب ومتعاون مع شركة Mix Beat في العديد من الأعمال الموسيقية الناجحة.</p>
+                <div class="artist-social">
+                    <a href="https://www.instagram.com/xx_euo_svm_xx?igsh=aXB4Nzh0amw5NWhh" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="no-spotify"><i class="fab fa-spotify"></i></a>
+                    <a href="https://youtube.com/@euo_ak47?si=L_Y60Z9U_EPWdb3O" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="no-soundcloud"><i class="fab fa-soundcloud"></i></a>
+                </div>
+                <div class="no-social-message">
+                    <p>الفنان مش معندهوش سبوتيفاي ولا ساوند كلاود دلوقتي، بس ممكن تتابعه على الإنستجرام واليوتيوب!</p>
+                </div>
+            </div>
+            
+            <!-- فنان 3 -->
+            <div class="artist-card scroll-reveal">
+                <div class="artist-image">
+                    <img src="https://i.postimg.cc/wxJNXtfK/2025-02-16-13-20-14-7ace59bf.jpg" alt="الفنان">
+                </div>
+                <h3 class="artist-name">اسم الفنان</h3>
+                <p class="artist-role">منتج موسيقي</p>
+                <p>وصف قصير للفنان ودوره في الشركة وخبراته في مجال الهندسة الصوتية.</p>
+                <div class="artist-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-spotify"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-soundcloud"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم من نحن -->
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-image scroll-reveal">
+                <img src="https://i.postimg.cc/fb1LkN97/1.png" alt="عن الشركة">
+            </div>
+            <div class="about-text scroll-reveal">
+                <h3>من نحن</h3>
+                <p>شركة MIX BEAT هي شركة تابعة للفنان GERBERTO. تأسست الشركة عام 2021 باسم MAFIAGB RAP وفي 30/12/2024 تم تحويل اسم الشركة إلى Mix Beat.</p>
+                <p>نحن متخصصون في هندسة الصوت وتوزيع الموسيقى وبيع الإيقاعات الموسيقية بأفضل جودة. نقدم حلولاً صوتية مبتكرة للفنانين والموسيقيين.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2021</div>
+                        <div class="timeline-text">تأسيس الشركة باسم MAFIAGB RAP</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-text">تغيير الاسم إلى Mix Beat وتوسيع نطاق الخدمات</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">المستقبل</div>
+                        <div class="timeline-text">نطمح لأن نكون الرائدين في مجال الهندسة الصوتية في المنطقة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- التذييل -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">MIX BEAT</div>
+            
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-spotify"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-soundcloud"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">الصفحة الرئيسية</a>
+                <a href="#tracks">التراكات</a>
+                <a href="#">الفنانين</a>
+                <a href="#">من نحن</a>
+                <a href="https://mixbeat.github.io/mix-beat-track/" target="_blank">توزيع من منصتنا</a>
+                <a href="#">اتصل بنا</a>
+                <a href="#">خدماتنا</a>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 Mix Beat. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // إنشاء جسيمات متحركة
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // أحجام عشوائية
+                const size = Math.random() * 5 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // مواقع عشوائية
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // مدة عشوائية للأنيميشن
+                const duration = Math.random() * 20 + 10;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // تأخير عشوائي
+                particle.style.animationDelay = `${Math.random() * 10}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // تأثيرات التمرير
+        function scrollReveal() {
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            
+            revealElements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        // رسالة عند الضغط على سبوتيفاي أو ساوند كلاود
+        document.addEventListener('DOMContentLoaded', function() {
+            const noSpotifyLinks = document.querySelectorAll('.no-spotify');
+            const noSoundcloudLinks = document.querySelectorAll('.no-soundcloud');
+            
+            noSpotifyLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('يا عم الحج، الفنان EUO مش معندهوش سبوتيفاي دلوقتي، بس ممكن تتابعه على الإنستجرام واليوتيوب!');
+                });
+            });
+            
+            noSoundcloudLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('يا معلم، الفنان EUO مش معندهوش ساوند كلاود دلوقتي، بس ممكن تتابعه على الإنستجرام واليوتيوب!');
+                });
+            });
+        });
+        
+        // تهيئة الصفحة
+        window.addEventListener('load', () => {
+            createParticles();
+            scrollReveal();
+        });
+        
+        window.addEventListener('scroll', scrollReveal);
+    </script>
 </body>
 </html>
-    
-  </body>
-  </html>
-  
-</html>
-<div class="footer">
-  <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-    <div>
-      <p>© MixBeat 2025</p>
-    </div>
-    <div>
-      <p><a href="https://www.instagram.com/mix___beat/" style="color: #cbd5e0; text-decoration: none;">انستجرام</a></p>
-      <p><a href="http://www.youtube.com/@mixbeat7" style="color: #cbd5e0; text-decoration: none;">يوتيوب</a></p>
-      <p><a href="https://wa.me/201152830940" style="color: #cbd5e0; text-decoration: none;">واتساب: 01152830940</a></p>
-      <p><a href="https://t.me/MIX_BEAT_EGP" style="color: #cbd5e0; text-decoration: none;">تلجرام</a></p>
