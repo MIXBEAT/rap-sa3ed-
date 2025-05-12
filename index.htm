@@ -625,6 +625,29 @@
             font-weight: bold;
             text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
         }
+
+        /* منتج gerbo */
+        .product-gerbo {
+            background: rgba(40, 40, 40, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: center;
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(171, 0, 18, 0.3);
+        }
+
+        .product-gerbo h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .product-gerbo p {
+            color: #cccccc;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -727,7 +750,7 @@
     </section>
     
     <!-- قسم الفنانين -->
-    <section class="artists-section">
+    <section class="artists-section" id="artists">
         <h2 class="section-title">فنانونا</h2>
         
         <div class="artists-slider">
@@ -783,9 +806,17 @@
             </div>
         </div>
     </section>
+
+    <!-- قسم منتج gerbo -->
+    <section class="tracks-section">
+        <div class="product-gerbo scroll-reveal">
+            <h3>منتج gerbo الموسيقي</h3>
+            <p>نقدم لكم منتجنا الموسيقي المتميز gerbo الذي يلبي احتياجات الفنانين والموسيقيين بأعلى جودة ممكنة.</p>
+        </div>
+    </section>
     
     <!-- قسم من نحن -->
-    <section class="about-section">
+    <section class="about-section" id="about">
         <div class="about-content">
             <div class="about-image scroll-reveal">
                 <img src="https://i.postimg.cc/fb1LkN97/1.png" alt="عن الشركة">
@@ -830,11 +861,11 @@
             <div class="footer-links">
                 <a href="#">الصفحة الرئيسية</a>
                 <a href="#tracks">التراكات</a>
-                <a href="#">الفنانين</a>
-                <a href="#">من نحن</a>
+                <a href="#artists">الفنانين</a>
+                <a href="#about">من نحن</a>
                 <a href="https://mixbeat.github.io/mix-beat-track/" target="_blank">توزيع من منصتنا</a>
-                <a href="#">اتصل بنا</a>
-                <a href="#">خدماتنا</a>
+                <a href="#contact">اتصل بنا</a>
+                <a href="#services">خدماتنا</a>
             </div>
             
             <div class="copyright">
@@ -905,15 +936,7 @@
                     alert('يا معلم، الفنان EUO مش معندهوش ساوند كلاود دلوقتي، بس ممكن تتابعه على الإنستجرام واليوتيوب!');
                 });
             });
-        });
-        
-        // تهيئة الصفحة
-        window.addEventListener('load', () => {
-            createParticles();
-            scrollReveal();
-        });
-        
-        window.addEventListener('scroll', scrollReveal);
-    </script>
-</body>
-</html>
+
+            // تنقل سلس عند الضغط على الروابط
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+               
