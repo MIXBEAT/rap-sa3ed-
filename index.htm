@@ -7,22 +7,40 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700;900&display=swap');
         
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #ffffff;
-            color: #333;
+        :root {
+            --primary-color: #a6ff00;
+            --hover-color: #91ff00;
+            --text-color: #333;
+            --bg-color: #ffffff;
+            --card-bg: #f9f9f9;
+            --section-bg: #f5f5f5;
+            --footer-bg: #333;
+            --footer-text: white;
+        }
+        
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
             perspective: 1000px;
         }
         
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
             transform-style: preserve-3d;
         }
         
+        /* Header Styles */
         header {
             display: flex;
             justify-content: space-between;
@@ -32,7 +50,7 @@
         }
         
         .logo {
-            width: 150px;
+            width: 120px;
             transform: translateZ(30px);
         }
         
@@ -42,50 +60,53 @@
         }
         
         nav ul li {
-            margin-left: 30px;
+            margin-left: 15px;
         }
         
         nav ul li a {
             text-decoration: none;
-            color: #333;
+            color: var(--text-color);
             font-weight: 900;
-            font-size: 18px;
+            font-size: 16px;
             transition: all 0.3s;
         }
         
         nav ul li a:hover {
-            color: #91ff00;
+            color: var(--hover-color);
         }
         
+        /* Hero Section */
         .hero {
-            height: 80vh;
+            height: auto;
+            min-height: 70vh;
             display: flex;
             align-items: center;
+            padding: 60px 0;
             position: relative;
             transform-style: preserve-3d;
         }
         
         .hero-content {
-            width: 50%;
+            width: 100%;
             transform: translateZ(50px);
+            text-align: center;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 900;
             margin-bottom: 20px;
             line-height: 1.2;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 30px;
-            line-height: 1.6;
         }
         
         .btn {
             display: inline-block;
-            background-color: #a6ff00;
+            background-color: var(--primary-color);
             color: white;
             padding: 12px 30px;
             border-radius: 30px;
@@ -93,22 +114,25 @@
             font-weight: 900;
             transition: all 0.3s;
             transform: translateZ(10px);
+            border: none;
+            cursor: pointer;
         }
         
         .btn:hover {
-            background-color: #a4e000;
+            background-color: var(--hover-color);
             transform: translateZ(10px) scale(1.05);
         }
         
+        /* Services Section */
         .services {
-            padding: 80px 0;
+            padding: 60px 0;
             transform-style: preserve-3d;
         }
         
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
+            font-size: 2rem;
+            margin-bottom: 40px;
             font-weight: 900;
             transform: translateZ(40px);
         }
@@ -116,12 +140,12 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 20px;
         }
         
         .service-card {
-            background-color: #f9f9f9;
-            padding: 30px;
+            background-color: var(--card-bg);
+            padding: 25px;
             border-radius: 15px;
             text-align: center;
             transition: all 0.3s;
@@ -134,34 +158,29 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
         
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #9dff00;
-        }
-        
         .service-card img.service-logo {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             object-fit: contain;
             margin-bottom: 15px;
         }
         
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 15px;
             font-weight: 900;
         }
         
+        /* Showcase Section */
         .showcase {
-            padding: 80px 0;
-            background-color: #f5f5f5;
+            padding: 60px 0;
+            background-color: var(--section-bg);
             transform-style: preserve-3d;
         }
         
         .beat-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
         
@@ -181,34 +200,35 @@
         
         .beat-image {
             width: 100%;
-            height: 300px;
+            height: 250px;
             object-fit: cover;
         }
         
         .beat-info {
-            padding: 20px;
+            padding: 15px;
         }
         
         .beat-info h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 10px;
             font-weight: 900;
         }
         
+        /* Artists Section */
         .artists-section {
-            padding: 80px 0;
+            padding: 60px 0;
             transform-style: preserve-3d;
         }
         
         .artists-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
         }
         
         .artist-card {
-            background-color: #f9f9f9;
-            padding: 30px;
+            background-color: var(--card-bg);
+            padding: 25px;
             border-radius: 15px;
             text-align: center;
             transition: all 0.3s;
@@ -222,23 +242,24 @@
         }
         
         .artist-card img {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
+        /* Footer */
         footer {
-            background-color: #333;
-            color: white;
-            padding: 50px 0;
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 40px 0;
             text-align: center;
             transform-style: preserve-3d;
         }
         
         .footer-logo {
-            width: 120px;
+            width: 100px;
             margin-bottom: 20px;
             transform: translateZ(20px);
         }
@@ -248,7 +269,7 @@
         }
         
         .contact-info a {
-            color: #9dff00;
+            color: var(--hover-color);
             text-decoration: none;
             font-weight: 900;
         }
@@ -261,15 +282,87 @@
         }
         
         .social-links a {
-            color: white;
+            color: var(--footer-text);
             font-size: 1.5rem;
             transition: all 0.3s;
             transform: translateZ(10px);
         }
         
         .social-links a:hover {
-            color: #9dff00;
+            color: var(--hover-color);
             transform: translateZ(10px) scale(1.2);
+        }
+        
+        /* Responsive Design */
+        @media (min-width: 576px) {
+            .hero-content {
+                text-align: right;
+            }
+            
+            nav ul li {
+                margin-left: 20px;
+            }
+            
+            .logo {
+                width: 140px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+            
+            .service-card {
+                padding: 30px;
+            }
+            
+            .service-card img.service-logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .artist-card img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .hero-content {
+                width: 50%;
+                text-align: right;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .logo {
+                width: 150px;
+            }
+            
+            nav ul li {
+                margin-left: 30px;
+            }
+            
+            nav ul li a {
+                font-size: 18px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .container {
+                padding: 0;
+            }
         }
     </style>
 </head>
@@ -391,7 +484,7 @@
     </div>
     
     <footer id="contact">
-        <img src=https://i.postimg.cc/XvFVZcm0/20250611-082427.png alt="Mix Beat Logo" class="footer-logo">
+        <img src="https://i.postimg.cc/XvFVZcm0/20250611-082427.png" alt="Mix Beat Logo" class="footer-logo">
         <div class="contact-info">
             <p>للتواصل معنا:</p>
             <a href="mailto:mix8eat@gmail.com">mix8eat@gmail.com</a>
@@ -402,7 +495,7 @@
             <a href="#"><i class="fab fa-soundcloud"></i></a>
             <a href="#"><i class="fab fa-spotify"></i></a>
         </div>
-        <p>© 20 Mix Beat. جميع الحقوق محفوظة.</p>
+        <p>© 2023 Mix Beat. جميع الحقوق محفوظة.</p>
     </footer>
     
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
