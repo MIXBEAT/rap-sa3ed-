@@ -96,7 +96,7 @@
         }
         
         .btn:hover {
-            background-color: #e04a00;
+            background-color: #a4e000;
             transform: translateZ(10px) scale(1.05);
         }
         
@@ -271,9 +271,33 @@
             color: #9dff00;
             transform: translateZ(10px) scale(1.2);
         }
+        
+        /* Fixed Logo Corner */
+        .fixed-logo-corner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            width: 80px;
+            height: 80px;
+            background-image: url('https://i.postimg.cc/1zs2yGGt/d5a4fe92-fbb1-41b4-a401-c08dc9e2d0ce.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .fixed-logo-corner:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
+    <div class="fixed-logo-corner"></div>
+    
     <div class="container">
         <header>
             <img src="https://i.postimg.cc/W4sNxJtm/20250609-161448.png" alt="Mix Beat Logo" class="logo">
