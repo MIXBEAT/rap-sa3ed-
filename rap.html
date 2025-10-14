@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الفنان الصاعد</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* شريط الأخبار */
+        .news-ticker {
+            background-color: #000;
+            color: #ffcc00;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            font-weight: bold;
+            border-bottom: 2px solid #ffcc00;
+            width: 100%;
+        }
+        
+        .news-ticker p {
+            display: inline-block;
+            padding-left: 100%;
+            animation: ticker 25s linear infinite;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+        }
+        
+        @keyframes ticker {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        /* الهيدر */
+        header {
+            background-color: #fff;
+            padding: clamp(20px, 5vw, 30px) clamp(15px, 4vw, 20px);
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            color: #000;
+            font-size: clamp(2rem, 6vw, 3rem);
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: #666;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+        
+        /* قسم الفنانين */
+        .artists-section {
+            padding: clamp(20px, 4vw, 30px) clamp(15px, 3vw, 20px);
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+        }
+        
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+            gap: clamp(15px, 3vw, 25px);
+            width: 100%;
+        }
+        
+        /* تصميم البطاقات الجديد مع تأثير Hover */
+        .card {
+            position: relative;
+            width: 100%;
+            height: clamp(300px, 70vw, 400px);
+            background-color: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ffcc00, #000, #ffcc00);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .card:hover::before {
+            opacity: 0.1;
+        }
+
+        .card .content {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            z-index: 10;
+            transition: all 0.5s ease;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .card .content span {
+            font-weight: bold;
+            color: #ffcc00;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            letter-spacing: 1px;
+            transition: all 0.5s ease;
+            text-transform: uppercase;
+        }
+
+        .card:hover .content {
+            height: 150px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+        }
+
+        .card:hover .content span {
+            transform: translateY(-10px);
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ffcc00, transparent, #ffcc00);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .card:hover::after {
+            opacity: 0.1;
+        }
+
+        .artist-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .artist-image {
+            transform: scale(1.1);
+        }
+
+        .artist-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(15px, 3vw, 20px);
+            text-align: center;
+            z-index: 5;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .card:hover .artist-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .artist-name {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .artist-description {
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+            max-width: 90%;
+        }
+
+        .artist-link {
+            display: inline-block;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #ffcc00;
+            padding: clamp(10px, 2.5vw, 12px) clamp(20px, 4vw, 25px);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            border: 2px solid #ffcc00;
+        }
+
+        .artist-link:hover {
+            background-color: transparent;
+            color: #ffcc00;
+            transform: translateY(-2px);
+        }
+        
+        /* الفوتر */
+        footer {
+            background-color: #000;
+            color: white;
+            padding: clamp(20px, 4vw, 30px) clamp(15px, 3vw, 20px);
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: clamp(10px, 3vw, 20px);
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            color: white;
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            color: #ffcc00;
+        }
+        
+        .copyright {
+            margin-top: 15px;
+            color: #aaa;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+        
+        /* تنسيقات للهواتف */
+        @media (max-width: 768px) {
+            .artists-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card {
+                height: clamp(280px, 60vh, 350px);
+            }
+            
+            .artist-name {
+                font-size: clamp(1.3rem, 5vw, 1.5rem);
+            }
+            
+            .artist-description {
+                font-size: clamp(0.85rem, 3vw, 0.9rem);
+            }
+            
+            .artist-link {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card .content {
+                height: 80px;
+                padding: 15px;
+            }
+            
+            .card:hover .content {
+                height: 120px;
+            }
+            
+            .artist-info {
+                padding: 10px;
+            }
+        }
+        
+        /* تحسينات للشاشات الكبيرة جداً */
+        @media (min-width: 1400px) {
+            .artists-section {
+                max-width: 1400px;
+            }
+            
+            .artists-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط الأخبار -->
+    <div class="news-ticker">
+        <p>📢 راب صاعد لاحدث اخبار الراب في الوطن العربي 
+        </p>
+    </div>
+    
+    <!-- الهيدر -->
+    <header>
+        <h1>الفنان الصاعد</h1>
+        <p>اخبار الفنان الصاعد</p>
+    </header>
+    
+    <!-- قسم الفنانين -->
+    <section class="artists-section">
+        <h2 class="section-title">أبرز الفنانين الصاعدين</h2>
+        
+        <div class="artists-grid">
+            <!-- الفنان برق -->
+            <div class="card">
+                <img src="https://i.postimg.cc/dtBTcnGG/2025-10-14-21-52-09-54a19c90.jpg" alt="الفنان برق" class="artist-image">
+                <div class="content">
+                    <span>الفنان برق</span>
+                </div>
+                <div class="artist-info">
+                    <div class="artist-name">الفنان برق</div>
+                    <p class="artist-description">برق بتراكو الجديــــد 🆕⭐🎶
+</p>
+                    <a href="https://www.instagram.com/p/DPZOP21DAga/?utm_source=ig_web_copy_link&igsh=MWEyNGMyN244ODBubw==" target="_blank" class="artist-link">متابعة على الإنستغرام</a>
+                </div>
+            </div>
+            
+            <!-- الفنان جيربرتو -->
+            <div class="card">
+                <img src="https://i.postimg.cc/sgbjkZHw/2025-10-14-21-52-04-e42e410f.jpg" alt="الفنان جيربرتو" class="artist-image">
+                <div class="content">
+                    <span>الفنان جيربرتو</span>
+                </div>
+                <div class="artist-info">
+                    <div class="artist-name">الفنان جيربرتو</div>
+                    <p class="artist-description">جيربرتو ينزل بـ عظمه
+ </p>
+                    <a href="https://www.instagram.com/p/DPedcH3DKuC/?utm_source=ig_web_copy_link&igsh=MThramI2M3p1c3E5NA==" target="_blank" class="artist-link">متابعة على الإنستغرام</a>
+                </div>
+            </div>
+            
+            <!-- الفنان معاذ بيرلو -->
+            <div class="card">
+                <img src="https://i.postimg.cc/pX2pC832/2025-10-14-21-52-09-5bbe3088.jpg" alt="الفنان معاذ بيرلو" class="artist-image">
+                <div class="content">
+                    <span>الفنان معاذ بيرلو</span>
+                </div>
+                <div class="artist-info">
+                    <div class="artist-name">الفنان معاذ بيرلو</div>
+                    <p class="artist-description"> معاذ بيرلو بتراك جديد 🆕🎶⭐
+</p>
+                    <a href="https://www.instagram.com/p/DPZNRbcjAwa/?utm_source=ig_web_copy_link&igsh=MWs5bWt0cDU2eTZteA==" target="_blank" class="artist-link">متابعة على الإنستغرام</a>
+                </div>
+            </div>
+            
+            <!-- الفنان علاء سايكو -->
+            <div class="card">
+                <img src="https://i.postimg.cc/V6QNCbjC/2025-10-14-21-52-09-cd409fdc.jpg" alt="الفنان علاء سايكو" class="artist-image">
+                <div class="content">
+                    <span>الفنان علاء سايكو</span>
+                </div>
+                <div class="artist-info">
+                    <div class="artist-name">الفنان علاء سايكو</div>
+                    <p class="artist-description">£LAP$YCHOبتراك جديد
+</p>
+                    <a href="https://www.instagram.com/p/DOGQdA_DKTB/?utm_source=ig_web_copy_link&igsh=MTFoNjVvMHQzaGpkcg==" target="_blank" class="artist-link">متابعة على الإنستغرام</a>
+                </div>
+            </div>
+            
+            <!-- الفنان استرو -->
+            <div class="card">
+                <img src="https://i.postimg.cc/J464QFbT/2025-10-14-21-52-08-9ac8bada.jpg" alt="الفنان استرو" class="artist-image">
+                <div class="content">
+                    <span>الفنان استرو</span>
+                </div>
+                <div class="artist-info">
+                    <div class="artist-name">الفنان استرو</div>
+                    <p class="artist-description">استرو عمل البوم من10 تركات خش اسمع
+</p>
+                    <a href="https://www.instagram.com/p/DOF743hjVhy/?utm_source=ig_web_copy_link&igsh=czU2dnRlZHh3azFp" target="_blank" class="artist-link">متابعة على الإنستغرام</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- الفوتر -->
+    <footer>
+        <div class="social-links">
+            <a href="#" class="social-link">إنستغرام</a>
+            <a href="#" class="social-link">فيسبوك</a>
+            <a href="#" class="social-link">يوتيوب</a>
+            <a href="#" class="social-link">تيك توك</a>
+        </div>
+        <p>تابع الفنان الصاعد على وسائل التواصل الاجتماعي</p>
+        <p class="copyright">جميع الحقوق محفوظة &copy; 2025 راب الصاعد</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('موقع الفنان الصاعد - تم تحميل الصفحة بنجاح');
+            
+            // إضافة تأثير تحميل للصور
+            const images = document.querySelectorAll('.artist-image');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.5s';
+            });
+
+            // إضافة تأثيرات إضافية للبطاقات
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // تحسين شريط الأخبار للشاشات الصغيرة
+            const ticker = document.querySelector('.news-ticker p');
+            if (window.innerWidth < 768) {
+                ticker.style.animationDuration = '15s';
+            }
+        });
+        
+        // تحديث شريط الأخبار عند تغيير حجم الشاشة
+        window.addEventListener('resize', function() {
+            const ticker = document.querySelector('.news-ticker p');
+            if (window.innerWidth < 768) {
+                ticker.style.animationDuration = '15s';
+            } else {
+                ticker.style.animationDuration = '25s';
+            }
+        });
+    </script>
+</body>
+</html>
