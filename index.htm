@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -283,7 +282,7 @@
         /* الهيرو سيكشن */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://via.placeholder.com/1920x600/222/fff?text=Rap+Sa3ed');
+                        url('https://i.postimg.cc/zBcn22zb/2025-10-14-18-54-49-a9d6d1cb.jpg');
             background-size: cover;
             background-position: center;
             height: 60vh;
@@ -360,6 +359,8 @@
             transition: all 0.3s ease;
             font-weight: 600;
             font-size: 1.1rem;
+            cursor: pointer;
+            text-align: center;
         }
 
         .nav-link:hover {
@@ -464,6 +465,56 @@
             color: #ffe600;
         }
 
+        /* نافذة الانتظار */
+        .waiting-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .waiting-content {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .waiting-content h3 {
+            color: #000;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .waiting-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .waiting-content button {
+            background: #fbff00;
+            color: #000;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .waiting-content button:hover {
+            background: #e6e600;
+        }
+
         /* تصميم متجاوب لجميع الشاشات */
         
         @media (max-width: 768px) {
@@ -547,6 +598,15 @@
         </div>
     </div>
 
+    <!-- نافذة الانتظار -->
+    <div id="waitingModal" class="waiting-modal">
+        <div class="waiting-content">
+            <h3>جاري العمل</h3>
+            <p>هذا القسم قيد التطوير حالياً، وسيتم إطلاقه قريباً!</p>
+            <button onclick="closeWaitingModal()">حسناً</button>
+        </div>
+    </div>
+
     <!-- شريط الأخبار المتحرك -->
     <div class="news-ticker">
         <div class="ticker-content">
@@ -595,13 +655,13 @@
             
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="rising-artists.html" class="nav-link">الفنان الصاعد</a>
+                    <a class="nav-link" onclick="openRapSa3edNews()">أخبار راب صاعد</a>
                 </li>
                 <li class="nav-item">
-                    <a href="rising-producers.html" class="nav-link">البروديوسر الصاعد</a>
+                    <a class="nav-link" onclick="showWaitingMessage()">البروديوسر الصاعد</a>
                 </li>
                 <li class="nav-item">
-                    <a href="rap-sa3ed-news.html" class="nav-link">أخبار راب صاعد</a>
+                    <a class="nav-link" onclick="showWaitingMessage()">الفنان الصاعد</a>
                 </li>
             </ul>
         </div>
@@ -615,18 +675,19 @@
             
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="egyptian-artists.html" class="nav-link">فنان مصري</a>
+                    <a class="nav-link" onclick="showWaitingMessage()">فنان مصري</a>
                 </li>
                 <li class="nav-item">
-                    <a href="arabic-artists.html" class="nav-link">فنان عربي</a>
+                    <a class="nav-link" onclick="showWaitingMessage()">فنان عربي</a>
                 </li>
                 <li class="nav-item">
-                    <a href="international-artists.html" class="nav-link">فنان أجنبي</a>
+                    <a class="nav-link" onclick="showWaitingMessage()">فنان أجنبي</a>
                 </li>
             </ul>
         </div>
     </div>
-<!-- الفوتر -->
+
+    <!-- الفوتر -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Rap Sa3ed - جميع الحقوق محفوظة</p>
@@ -649,6 +710,29 @@
                     loading.style.display = 'none';
                 }, 500);
             }, 2000);
+        });
+
+        // فتح صفحة أخبار راب صاعد
+        function openRapSa3edNews() {
+            window.open('https://mixbeat.github.io/Artist-sa3ed-/', '_blank');
+        }
+
+        // عرض رسالة الانتظار
+        function showWaitingMessage() {
+            document.getElementById('waitingModal').style.display = 'flex';
+        }
+
+        // إغلاق نافذة الانتظار
+        function closeWaitingModal() {
+            document.getElementById('waitingModal').style.display = 'none';
+        }
+
+        // إغلاق نافذة الانتظار عند النقر خارجها
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('waitingModal');
+            if (event.target === modal) {
+                closeWaitingModal();
+            }
         });
     </script>
 </body>
